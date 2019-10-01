@@ -10,8 +10,6 @@
         "port": 8443
     },
     "environment": {
-        "showdashboard": true,
-        "dashboard": "Dashboard",
         "uilayout": "terminal-terminal",
         "hideintro": false,
         "hidefinish": false

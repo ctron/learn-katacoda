@@ -1,0 +1,79 @@
+{
+    "pathwayTitle": "OpenShift",
+    "icon": "fa-openshift",
+    "title": "IoT messaging with OpenShift and Red Hat AMQ Online",
+    "description": "In this self paced tutorial you will learn how to create and use cloud native IoT using AMQ Online on the OpenShift Container Platform from Red Hat.",
+    "difficulty": "beginner",
+    "time": "30 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Deploying the infrastructure",
+                "text": "01-deploying.md",
+                "verify": "01-verify.sh"
+            },
+            {
+                "title": "Creating an initial project",
+                "text": "02-creating-an-initial-project.md",
+                "verify": "02-verify.sh"
+            },
+            {
+                "title": "Creating an IoT Project",
+                "text": "03-creating-an-iot-project.md",
+                "verify": "03-verify.sh"
+            },
+            {
+                "title": "Understanding the structure",
+                "text": "04-structure.md"
+            },
+            {
+                "title": "Create consumer user",
+                "text": "05-create-consumer-user.md",
+                "verify": "05-verify.sh"
+            },
+            {
+                "title": "Configure context",
+                "text": "06-configure-context.md",
+                "verify": "06-verify.sh"
+            }
+        ],
+        "intro": {
+            "courseData": "env-init.sh",
+            "code": "set-env.sh",
+            "text": "00-intro.md"
+        },
+        "finish": {
+            "text": "99-finish.md"
+        },
+        "assets": {
+            "host01": [
+                {"file": "iot-config.yaml", "target": "~/iot"},
+                {"file": "iot-project.yaml", "target": "~/iot"},
+                {"file": "iot-user-consumer.yaml", "target": "~/iot"},
+                {"file": "volumes.json", "target": "~/"},
+                {"file": ".init.sh", "target": "~/", "chmod": "+x" }
+            ]
+        }
+    },
+    "files": [
+        "~/iot/iot-project.yaml",
+        "~/iot/iot-user-consumer.yaml"
+     ],
+    "environment": {
+
+        "uilayout": "terminal-iframe",
+
+        "showdashboard": true,
+        "dashboards": [
+            {
+                "name": "OpenShift Console",
+                "port": 8443
+            }
+        ],
+        "hideintro": false,
+        "hidefinish": false
+    },
+    "backend": {
+        "imageid": "openshift-3-11"
+    }
+}

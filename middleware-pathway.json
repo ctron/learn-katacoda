@@ -34,6 +34,11 @@
       "title": "Application Messaging with Openshift"
     },
     {
+      "external_link": "https://learn.openshift.com/middleware/amq-getting-started-iot/",
+      "course_id": "amq-getting-started-iot",
+      "title": "IoT Messaging with Openshift"
+    },
+    {
       "external_link": "https://learn.openshift.com/middleware/rhoar-getting-started-thorntail/",
       "course_id": "rhoar-getting-started-thorntail",
       "title": "Thorntail development"

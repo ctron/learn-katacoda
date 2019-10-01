@@ -1,0 +1,62 @@
+kind: IoTConfig
+apiVersion: iot.enmasse.io/v1alpha1
+metadata:
+  name: default
+spec:
+  services:
+    authentication:
+      container:
+        resources:
+          limits:
+            memory: 128Mi
+          requests:
+            memory: 128Mi
+    deviceRegistry:
+      file:
+        numberOfDevicesPerTenant: 100000
+        container:
+          resources:
+            limits:
+              memory: 192Mi
+            requests:
+              memory: 192Mi
+    tenant:
+      container:
+        resources:
+          limits:
+            memory: 192Mi
+          requests:
+            memory: 192Mi
+  adapters:
+    http:
+      replicas: 0
+      containers:
+        adapter:
+          resources:
+            limits:
+              memory: 192Mi
+            requests:
+              memory: 192Mi
+        proxy:
+          resources:
+            limits:
+              memory: 64Mi
+            requests:
+              memory: 64Mi
+    mqtt:
+      containers:
+        adapter:
+          resources:
+            limits:
+              memory: 256Mi
+            requests:
+              memory: 256Mi
+        proxy:
+          resources:
+            limits:
+              memory: 64Mi
+            requests:
+              memory: 64Mi
+      endpoint:
+        secretNameStrategy:
+          secretName: iot-mqtt-adapter-tls

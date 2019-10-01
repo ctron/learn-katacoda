@@ -1,0 +1,18 @@
+kind: MessagingUser
+apiVersion: user.enmasse.io/v1beta1
+metadata:
+  name: iot.consumer
+spec:
+  username: consumer
+  authentication:
+    type: password
+    password: Zm9vYmFy # <- foobar
+  authorization:
+  - addresses:  [ "telemetry/example.iot", "telemetry/example.iot/*", "event/example.iot", "event/example.iot/*" ]
+    operations: [ "recv" ]
+  - addresses:  [ "control/example.iot", "control/example.iot/*" ]
+    operations: [ "send", "recv" ]
+  - addresses:  [ "command/example.iot", "command/example.iot/*" ]
+    operations: [ "send" ]
+  - addresses:  [ "command_response/example.iot", "command_response/example.iot/*" ]
+    operations: [ "recv" ]
